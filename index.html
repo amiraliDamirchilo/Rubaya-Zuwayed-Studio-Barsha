@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rubaya Zuwayed Studio | Al Barsha, Dubai</title>
+<meta name="description" content="Rubaya Zuwayed Studio, Al Barsha, Dubai. Portrait, family and ID photography. Book a session on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+/* Concept: the studio floor. Seamless grey backdrop paper, charcoal, one warm tungsten light you can move. Portraits are about light, so the site is too. */
+:root{--paper:#E7E4DF;--char:#151617;--mid:#2A2C2E;--tung:#F2B66B;--ivory:#FAF7F2;--mute:#7E7A74;--line:rgba(21,22,23,.13);
+--serif:'DM Serif Display',Georgia,serif;--sans:'Almarai',system-ui,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--char);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:inherit}p{max-width:54ch}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+h1 i,h2 i{color:#B5803E}
+.ar{font-family:var(--sans);direction:rtl}
+.k{font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+:focus-visible{outline:2px solid var(--tung);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:var(--sans);transition:transform .25s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-k{background:var(--char);color:#fff}.btn-t{background:var(--tung);color:var(--char)}.btn-o{box-shadow:inset 0 0 0 1.5px currentColor}
+.nav{position:sticky;top:0;z-index:30;background:rgba(231,228,223,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:13px}
+.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.logo b{font-family:var(--serif);font-weight:400;font-size:22px}
+.logo small{font-size:12px;color:var(--mute)}
+.menu{display:flex;gap:26px;font-size:15px}.menu a{text-decoration:none;color:var(--mute)}.menu a:hover{color:var(--char)}
+.nav .btn{padding:10px 16px;font-size:14px}
+.hero{background:var(--char);color:var(--ivory)}
+.hero .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:center;padding-block:clamp(40px,6vw,80px)}
+.hero-copy{min-width:0}
+.hero .k{color:#9C978F}
+.hero h1{font-size:clamp(52px,7.6vw,118px);margin:20px 0 10px}
+.hero h1 i{color:var(--tung)}
+.hero .h1ar{font-size:clamp(22px,2.4vw,32px);color:#9C978F;margin-bottom:22px;text-align:left}
+.hero .lead{color:#C8C3BB;font-size:clamp(17px,1.5vw,20px);margin-bottom:28px;max-width:38ch}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.cam{position:relative;min-width:0;border-radius:6px;overflow:hidden;background:#000;aspect-ratio:4/5}
+#light{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:none}
+.hud{position:absolute;inset:14px;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#E9E4DB}
+.hud .t{display:flex;justify-content:space-between}
+.hud .rec::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#E5483A;margin-right:6px;vertical-align:1px}
+.hud .corner{position:absolute;width:22px;height:22px;border-color:rgba(255,255,255,.6);border-style:solid}
+.c1{top:0;left:0;border-width:1px 0 0 1px}.c2{top:0;right:0;border-width:1px 1px 0 0}.c3{bottom:0;left:0;border-width:0 0 1px 1px}.c4{bottom:0;right:0;border-width:0 1px 1px 0}
+.setups{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.setups button{background:none;border:1px solid rgba(255,255,255,.2);color:#C8C3BB;font:700 13px var(--sans);padding:9px 14px;border-radius:999px;cursor:pointer}
+.setups button[aria-pressed="true"]{background:var(--tung);color:var(--char);border-color:var(--tung)}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;transition:opacity .5s}
+section{padding-block:clamp(80px,10vw,130px)}
+.hd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(36px,5vw,56px)}
+.hd h2{font-size:clamp(44px,6vw,92px)}.hd p{color:var(--mute)}
+.hd .ar{color:var(--mute);font-size:18px;margin-top:8px}
+.sess{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.s{background:var(--ivory);border-radius:6px;padding:0 0 22px;display:flex;flex-direction:column;text-decoration:none;min-width:0;overflow:hidden;transition:transform .3s var(--ease)}
+.s:hover{transform:translateY(-5px)}
+.s .ph{aspect-ratio:4/5;position:relative;overflow:hidden}
+.s .ph::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at var(--lx,35%) 30%,rgba(242,182,107,.55),transparent 70%),linear-gradient(180deg,#D7D3CD,#A9A49C)}
+.s .ph::after{content:"";position:absolute;left:50%;bottom:-6%;width:56%;aspect-ratio:1/1.25;transform:translateX(-50%);border-radius:50% 50% 12% 12%/60% 60% 12% 12%;background:linear-gradient(180deg,#5A5650,#2E2C29)}
+.s .ph span{position:absolute;top:10px;left:12px;z-index:1;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#3A3732}
+.s h3{font-size:26px;padding:16px 18px 4px}
+.s p{color:var(--mute);font-size:15px;padding:0 18px}
+.s .ar{color:#B5803E;font-size:15px;padding:6px 18px 0}
+.s .go{margin-top:auto;padding:14px 18px 0;font-weight:800;font-size:14px}
+.how{background:var(--mid);color:var(--ivory)}
+.how .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.how h2{font-size:clamp(44px,6vw,92px)}.how h2 i{color:var(--tung)}
+.how p{color:#C8C3BB;margin-top:16px}
+.st{display:grid;gap:0}
+.st div{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.st b{font-family:var(--serif);font-size:44px;color:var(--tung);line-height:1;font-weight:400}
+.st h3{font-family:var(--sans);font-weight:800;font-size:18px}.st p{margin:2px 0 0;font-size:15px}
+.idp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.idcard{background:var(--ivory);border-radius:10px;padding:26px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.3);transform:rotate(-2deg)}
+.idcard .face{aspect-ratio:35/45;background:linear-gradient(180deg,#fff,#EDEAE4);border:1px solid var(--line);position:relative;overflow:hidden}
+.idcard .face::after{content:"";position:absolute;left:50%;bottom:-8%;width:70%;aspect-ratio:1/1.2;transform:translateX(-50%);border-radius:50% 50% 14% 14%/60% 60% 14% 14%;background:#4A4742}
+.idcard .lines i{display:block;height:10px;border-radius:5px;background:#E2DED7;margin:10px 0}
+.idcard .lines i:nth-child(1){width:70%}.idcard .lines i:nth-child(2){width:90%}.idcard .lines i:nth-child(3){width:50%}
+.idp h2{font-size:clamp(40px,5vw,76px)}.idp p{color:var(--mute);margin:16px 0 22px}
+.book{background:var(--char);color:var(--ivory)}
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:start}
+.book h2{font-size:clamp(46px,6.4vw,100px);margin-bottom:22px}
+.book h2 i{color:var(--tung)}
+.r{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.r span{color:var(--tung);font-weight:700}
+form{background:var(--mid);border-radius:12px;padding:clamp(22px,4vw,34px);display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+form h3{grid-column:1/-1;font-size:32px}
+label{display:grid;gap:6px;font-weight:700;font-size:13px;color:#9C978F}
+input,select{font:inherit;font-size:16px;padding:13px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:var(--char);color:#fff;width:100%}
+select option{color:#111}
+input:focus,select:focus{outline:none;border-color:var(--tung)}
+form .btn{grid-column:1/-1;justify-content:center}
+footer{background:var(--char);color:#9C978F;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:24px;border-top:1px solid rgba(255,255,255,.1)}
+.dock{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;transform:translateY(160%);transition:transform .5s var(--ease)}
+.dock.show{transform:none}
+@media (max-width:980px){.menu{display:none}.hero .wrap,.hd,.how .wrap,.idp,.book .wrap{grid-template-columns:1fr}.cam{max-width:440px;width:100%;margin:0 auto}.sess{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.sess,form{grid-template-columns:1fr}.idcard{grid-template-columns:90px 1fr}.r{grid-template-columns:1fr;gap:2px}.nav .btn span{display:none}.logo small{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2 0 12 0 5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></symbol></svg>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top"><b>Rubaya Zuwayed</b><small>Studio · Al Barsha</small></a>
+  <nav class="menu" aria-label="Main"><a href="#sessions">Sessions</a><a href="#id">ID photos</a><a href="#book">Book</a></nav>
+  <a class="btn btn-k wa" data-msg="Hello Rubaya Zuwayed Studio, I'd like to book a photo session." href="#"><svg><use href="#wa"/></svg><span>Book a session</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="k">Photo studio · Al Barsha, Dubai</span>
+      <h1>Good light. <i>Better</i> you.</h1>
+      <p class="h1ar ar" style="text-align:left">صورتك تستاهل إضاءة صح.</p>
+      <p class="lead">Portraits, family photos and official ID pictures, lit properly and ready to take home. Walk in, sit down, look like yourself.</p>
+      <div class="ctas">
+        <a class="btn btn-t wa" data-msg="Hello, I'd like to book a portrait session." href="#"><svg><use href="#wa"/></svg>Book a portrait</a>
+        <a class="btn btn-o" style="color:#fff" href="#id">Need ID photos?</a>
+      </div>
+    </div>
+    <div>
+      <div class="cam">
+        <canvas id="light" aria-label="A 3D portrait bust in a studio. Drag to move the light."></canvas>
+        <div class="hud"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <div class="t"><span class="rec">Live</span><span id="setupName">Rembrandt</span></div>
+          <div class="t"><span>Drag to move the light</span><span>Tap to shoot</span></div></div>
+        <div class="flash" id="flash"></div>
+      </div>
+      <div class="setups" role="group" aria-label="Lighting setup"><button data-a="-0.9" data-e="0.55" aria-pressed="true">Rembrandt</button><button data-a="0" data-e="0.9" aria-pressed="false">Butterfly</button><button data-a="-1.55" data-e="0.1" aria-pressed="false">Split</button><button data-a="-0.4" data-e="0.35" aria-pressed="false">Soft</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="wrap">
+    <div class="hd"><h2>What are we <i>shooting</i> today?</h2><div><p>Tap a session and we'll reply with times.</p><p class="ar">اختار نوع التصوير</p></div></div>
+    <div class="sess">
+      <a class="s wa" data-msg="Hello, I'd like to book a portrait session." href="#" style="--lx:30%"><div class="ph"><span>Portrait</span></div><h3>Portraits</h3><p>For your profile, your CV, or just for you.</p><p class="ar">صور شخصية</p><span class="go">Book →</span></a>
+      <a class="s wa" data-msg="Hello, I'd like to book a family photo session." href="#" style="--lx:50%"><div class="ph"><span>Family</span></div><h3>Family</h3><p>Everyone in one frame, finally.</p><p class="ar">صور عائلية</p><span class="go">Book →</span></a>
+      <a class="s wa" data-msg="Hello, I'd like graduation photos." href="#" style="--lx:70%"><div class="ph"><span>Graduation</span></div><h3>Graduation</h3><p>Gown, cap and the proud smile.</p><p class="ar">صور التخرج</p><span class="go">Book →</span></a>
+      <a class="s wa" data-msg="Hello, I need passport / ID photos." href="#" style="--lx:50%"><div class="ph"><span>Official</span></div><h3>ID &amp; passport</h3><p>Correct size and background for official use.</p><p class="ar">صور رسمية</p><span class="go">Get yours →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div><h2>Never liked a photo of yourself? <i>Try us.</i></h2><p>Most bad photos are bad light. We fix the light, guide your pose, and show you the shots before you leave.</p></div>
+    <div class="st">
+      <div><b>01</b><div><h3>Sit down</h3><p>No experience needed. We'll tell you where to look.</p></div></div>
+      <div><b>02</b><div><h3>We light you</h3><p>The setup that suits your face, not a default flash.</p></div></div>
+      <div><b>03</b><div><h3>You choose</h3><p>See the shots on screen and pick your favourites.</p></div></div>
+      <div><b>04</b><div><h3>Take them home</h3><p>Prints, digital files, or both.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="id">
+  <div class="wrap idp">
+    <div class="idcard" aria-hidden="true"><div class="face"></div><div class="lines"><i></i><i></i><i></i></div></div>
+    <div><span class="k">Official photos</span><h2 style="margin-top:14px">ID, visa and passport photos, <i>done right.</i></h2><p>Tell us which document it's for and we'll shoot it to the right size and background. Ask us if you're not sure what you need.</p>
+      <a class="btn btn-k wa" data-msg="Hello, I need ID / passport photos. The document is for: " href="#"><svg><use href="#wa"/></svg>Ask about ID photos</a></div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <h2>Your <i>light</i> is ready.</h2>
+      <div class="r"><span>Studio</span><div>Al Barsha, Dubai</div></div>
+      <div class="r"><span>Languages</span><div>English · العربية</div></div>
+      <div class="r"><span>Booking</span><div>WhatsApp, fastest reply</div></div>
+      <a class="btn btn-o" style="margin-top:24px;color:#fff" href="https://www.google.com/maps/search/?api=1&query=Rubaya+Zuwayed+Studio+Al+Barsha+Dubai" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <form id="bk">
+      <h3>Book a session</h3>
+      <label for="bS">Session<select id="bS"><option>Portrait</option><option>Family</option><option>Graduation</option><option>ID / passport photos</option><option>Other</option></select></label>
+      <label for="bP">People<select id="bP"><option>1</option><option>2</option><option>3–5</option><option>6+</option></select></label>
+      <label for="bD">Day<input id="bD" type="date"></label>
+      <label for="bN">Name<input id="bN" type="text" autocomplete="name"></label>
+      <button class="btn btn-t" type="submit"><svg><use href="#wa"/></svg>Send on WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Rubaya Zuwayed Studio · Al Barsha, Dubai</span><span>Portrait · Family · ID</span></div></footer>
+<div class="dock" id="dock"><a class="btn btn-t wa" data-msg="Hello Rubaya Zuwayed Studio, I'd like to book a photo session." href="#"><svg><use href="#wa"/></svg>Book a session</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var PHONE='971500000000'; // TODO: real WhatsApp number
+  function url(m){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(m)}
+  document.querySelectorAll('.wa').forEach(function(a){a.href=url(a.dataset.msg);a.target='_blank';a.rel='noopener'});
+  var dock=document.getElementById('dock');addEventListener('scroll',function(){dock.classList.toggle('show',scrollY>innerHeight*.8)},{passive:true});
+  var d=document.getElementById('bD');d.value=new Date().toISOString().slice(0,10);d.min=d.value;
+  document.getElementById('bk').addEventListener('submit',function(e){e.preventDefault();var v=function(i){return document.getElementById(i).value||'-'};
+    window.open(url('Hello Rubaya Zuwayed Studio, I\'d like to book.\nSession: '+v('bS')+'\nPeople: '+v('bP')+'\nDay: '+v('bD')+'\nName: '+v('bN')),'_blank','noopener')});
+
+  if(!window.THREE)return;
+  var canvas=document.getElementById('light'),stage=canvas.parentElement,flash=document.getElementById('flash'),nm=document.getElementById('setupName');
+  try{
+    var R=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
+    R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+    var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(30,4/5,.1,100);C.position.set(0,1.2,11);C.lookAt(0,.9,0);
+    function col(h){return new THREE.Color(h).convertSRGBToLinear()}
+    S.background=col(0x0d0d0e);
+    // seamless backdrop (curved)
+    var bdG=new THREE.PlaneGeometry(14,12,1,40),bp=bdG.attributes.position;
+    for(var i=0;i<bp.count;i++){var y=bp.getY(i);var z=y<-2?-(y+2)*-.0:0;if(y<-2){var t=(-2-y)/4;bp.setY(i,-2-Math.sin(t*Math.PI/2)*1.5);bp.setZ(i,(1-Math.cos(t*Math.PI/2))*3)}}
+    bdG.computeVertexNormals();var backdrop=new THREE.Mesh(bdG,new THREE.MeshStandardMaterial({color:col(0x8F8B85),roughness:.95}));backdrop.position.set(0,2.5,-3);backdrop.receiveShadow=true;S.add(backdrop);
+    // bust: head (deformed sphere), neck, shoulders
+    var skin=new THREE.MeshStandardMaterial({color:col(0xD9B79A),roughness:.6});
+    var dark=new THREE.MeshStandardMaterial({color:col(0x2A2826),roughness:.8});
+    var B=new THREE.Group();S.add(B);
+    var hg=new THREE.SphereGeometry(1,96,72),hp=hg.attributes.position,v=new THREE.Vector3();
+    for(i=0;i<hp.count;i++){v.fromBufferAttribute(hp,i);v.x*=.82;v.y*=1.12;v.z*=.95;
+      // nose
+      var nd=Math.exp(-((v.x*v.x)/.02+Math.pow(v.y+.05,2)/.08));if(v.z>0)v.z+=nd*.28;
+      // brow ridge & eye sockets
+      var eye=Math.exp(-(Math.pow(Math.abs(v.x)-.32,2)/.012+Math.pow(v.y-.18,2)/.01));if(v.z>0)v.z-=eye*.1;
+      var brow=Math.exp(-(Math.pow(v.y-.32,2)/.006))*(Math.abs(v.x)<.55?1:0);if(v.z>0)v.z+=brow*.04;
+      // cheekbones
+      var ch=Math.exp(-(Math.pow(Math.abs(v.x)-.45,2)/.03+Math.pow(v.y+.05,2)/.03));if(v.z>0)v.z+=ch*.05;
+      // lips
+      var lip=Math.exp(-(v.x*v.x/.03+Math.pow(v.y+.48,2)/.004));if(v.z>0)v.z+=lip*.06;
+      // chin
+      if(v.y<-.6)v.x*=1-(-.6-v.y)*.5;
+      hp.setXYZ(i,v.x,v.y,v.z)}
+    hg.computeVertexNormals();
+    var head=new THREE.Mesh(hg,skin);head.position.y=2.1;head.castShadow=true;head.receiveShadow=true;B.add(head);
+    var hair=new THREE.Mesh(new THREE.SphereGeometry(1.03,64,48,0,Math.PI*2,0,Math.PI*.45),dark);hair.scale.set(.86,1.12,1);hair.position.set(0,2.18,-.06);hair.rotation.x=-.25;hair.castShadow=true;B.add(hair);
+    var neck=new THREE.Mesh(new THREE.CylinderGeometry(.38,.45,1.1,32),skin);neck.position.y=.95;neck.castShadow=true;neck.receiveShadow=true;B.add(neck);
+    var sh=new THREE.Mesh(new THREE.SphereGeometry(1.9,64,32,0,Math.PI*2,0,Math.PI/2),dark);sh.scale.set(1,.45,.6);sh.position.y=.15;sh.castShadow=true;sh.receiveShadow=true;B.add(sh);
+    // key light (softbox) + fill + rim
+    var key=new THREE.SpotLight(col(0xFFD7A0),3.2,30,.6,.6,1.2);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.radius=6;key.target=head;S.add(key);
+    var box=new THREE.Mesh(new THREE.PlaneGeometry(1.6,1.6),new THREE.MeshBasicMaterial({color:col(0xFFE8C8),side:THREE.DoubleSide}));S.add(box);
+    var fill=new THREE.HemisphereLight(col(0xFFF6EA),col(0x1a1a1a),.18);S.add(fill);
+    var rim=new THREE.DirectionalLight(col(0xFFFFFF),.6);rim.position.set(3,4,-5);S.add(rim);
+    var az=-0.9,el=.55,tAz=az,tEl=el;
+    function place(){var r=5.5;var x=Math.sin(az)*Math.cos(el)*r,y=2.1+Math.sin(el)*r,z=Math.cos(az)*Math.cos(el)*r;key.position.set(x,y,z);box.position.set(x,y,z);box.lookAt(head.position)}
+    place();
+    function size(){var w=canvas.clientWidth,h=canvas.clientHeight;if(!w)return;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix()}
+    size();addEventListener('resize',size);
+    var sb=document.querySelectorAll('.setups button');
+    sb.forEach(function(b){b.addEventListener('click',function(){sb.forEach(function(o){o.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');tAz=+b.dataset.a;tEl=+b.dataset.e;nm.textContent=b.textContent})});
+    var drag=false,lx=0,ly=0,moved=0;
+    canvas.addEventListener('pointerdown',function(e){drag=true;moved=0;lx=e.clientX;ly=e.clientY;canvas.setPointerCapture(e.pointerId)});
+    canvas.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lx,dy=e.clientY-ly;moved+=Math.abs(dx)+Math.abs(dy);tAz+=dx*.008;tEl=Math.max(-.2,Math.min(1.2,tEl-dy*.006));lx=e.clientX;ly=e.clientY;
+      sb.forEach(function(o){o.setAttribute('aria-pressed','false')});nm.textContent='Custom'});
+    canvas.addEventListener('pointerup',function(){drag=false;if(moved<6){flash.style.transition='none';flash.style.opacity=.9;requestAnimationFrame(function(){flash.style.transition='opacity .6s';flash.style.opacity=0})}});
+    var visible=true,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+    new IntersectionObserver(function(es){visible=es[0].isIntersecting}).observe(stage);
+    (function loop(t){requestAnimationFrame(loop);if(!visible)return;var tt=(t-t0)/1000;
+      az+=(tAz-az)*.08;el+=(tEl-el)*.08;place();
+      B.rotation.y=(reduce?0:Math.sin(tt*.35)*.12)+.1;
+      R.render(S,C)})(t0);
+  }catch(err){console.warn(err)}
+})();
+</script>
+</body>
+</html>
